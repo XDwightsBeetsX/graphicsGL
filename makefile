@@ -1,16 +1,44 @@
 # Makefile for C++ Graphics with OpenGL
 # Author: John Gutierrez
 
-EXE_NAME = program
+# Directory business
+glfw_inc = include/GLFW
+glfw_lib = lib/GLFW
 
-CP = g++
-CFLAGS = -g
+
+# Source Files
+TARGET = program
+BIN = bin
+SRC = src
+
+# Linking to static library files
+includes_paths = $(glfw_inc)
+libs_paths = $(glfw_lib)
+
+INCLUDE_FLAGS = -I$(includes_paths)
+LIB_FLAGS = -L$(libs_paths)
 
 
-all: program
+# Compiler
+CXX = g++
+CXXFLAGS = -g $(INCLUDE_FLAGS)
 
-program:
-	$(CP) $(CFLAGS) ./src/main.cpp -o ./bin/$(EXE_NAME)
+
+# MAKE
+all: $(TARGET)
+
+$(TARGET): main
+	$(CXX) $(CXXFLAGS) $(BIN)/main.o -o $(BIN)/$(TARGET).exe $(LIB_FLAGS)
+
+main:
+	$(CXX) $(CXXFLAGS) -c $(SRC)/main.cpp -o $(BIN)/main.o $(LIB_FLAGS)
 
 clean:
-	rm ./bin/*.o
+	rm $(BIN)/*.o
+
+wipe:
+	make clean
+	rm $(BIN)/*.exe
+
+run:
+	$(BIN)/$(EXE_NAME)
