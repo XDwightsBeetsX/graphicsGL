@@ -6,37 +6,38 @@ This library is really an interface between the code and a computer's graphics.
 
 I have never used this before so just looking to get something to work...
 
-## Dependencies
-
-1. **`make`** & **`g++`**
-2. [GLFW](https://www.glfw.org/)
-
 ## Usage
 
 Project can be built using `make all` and run under `\bin` with `make run`  
 
 Issues can sometimes be solve by rebuilding with `make clean` then `make all`  
 
-## Overview
+### Dependencies
+
+1. **`make`** & **`g++`**
+2. [GLFW](https://www.glfw.org/)
+
+## Overview of OpenGL
 
 - Core OpenGL (GL)
-  - Contains geometry functions with prefix *"gl"*
+  - Contains geometry functions with prefix *'gl'*
 - OpenGL Utility Library (GLU)
-  - Modelling functions with prefix *"glu"*
+  - Modelling functions with prefix *'glu'*
 - OpenGL Utilities Toolkit (GLUT)
-  - Interfaces with Operating system to create windows. Prefixed by *"glut"*
+  - Interfaces with Operating system to create windows. Prefixed by *'glut'*
 - OpenGL Extension Wrangler Library (GLEW)
   - Determines which OpenGL extensions are supported on a platform
 
-**GLFW offers an all-in-one wrapper with basic functionality in a single library.**
-
 ### Components
 
-Each of these libraries contains several parts that must be availiable to the program for compiling.
+Each of these libraries contains several parts that must be availiable to the compiler.
 
-- *header* file
-- *static library*
-- optional *shared library*
+- *header* - function *declarations*
+- *library* - function *definitions*
+
+OpenGL is inherently low-level to allow for customization and efficiency. This means function libraries must be built for a specific system.
+
+**The [Graphics Library Framework (GLFW)](https://www.glfw.org/) offers an all-in-one wrapper with basic functionality in a single library.**
 
 ## Getting Started
 
@@ -75,7 +76,7 @@ Each of these libraries contains several parts that must be availiable to the pr
       `MinGW\mingw64\include`
       - This folder contains the *glfw* function declarations in headers, which are defined in the `libglfw3.a` for the system
 
-5. Test
+5. Verify Usage
 
     - The [sample code](https://www.glfw.org/documentation.html#example-code) below was used to verify the setup.
 
