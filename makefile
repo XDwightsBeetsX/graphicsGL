@@ -1,38 +1,36 @@
 # Makefile for C++ Graphics with OpenGL
 # Author: John Gutierrez
 
-# Directory business
-glfw_inc = include/GLFW
-glfw_lib = lib/GLFW
-
-
 # Source Files
 TARGET = program
 BIN = bin
 SRC = src
 
-# Linking to static library files
-includes_paths = $(glfw_inc)
-libs_paths = $(glfw_lib)
 
-INCLUDE_FLAGS = -I$(includes_paths)
-LIB_FLAGS = -L$(libs_paths)
+# Linking to static library files
+INCLUDE = H:/dev/graphicsGL/include
+LIB_DIR = H:/dev/graphicsGL/lib/GLFW
+LIB_FLAGS = -lglfw3 -lopengl32 -lgdi32
 
 
 # Compiler
 CXX = g++
-CXXFLAGS = -g $(INCLUDE_FLAGS)
+CXXFLAGS = -g -L$(LIB_DIR)
+OBJ_FLAGS = -g -c -I$(INCLUDE)
 
 
 # MAKE
 all: $(TARGET)
 
-$(TARGET): main
-	$(CXX) $(CXXFLAGS) $(BIN)/main.o -o $(BIN)/$(TARGET).exe $(LIB_FLAGS)
+$(TARGET): main.o
+	$(info linking...)
+	$(CXX) $(BIN)/main.o $(CXXFLAGS) $(LIB_FLAGS) -o $(BIN)/$(TARGET)
 
-main:
-	$(CXX) $(CXXFLAGS) -c $(SRC)/main.cpp -o $(BIN)/main.o $(LIB_FLAGS)
+main.o: $(SRC)/main.cpp
+	$(info compiling object files...)
+	$(CXX) $(SRC)/main.cpp $(OBJ_FLAGS) -o $(BIN)/main.o
 
+.PHONY: clean
 clean:
 	rm $(BIN)/*.o
 
@@ -41,4 +39,4 @@ wipe:
 	rm $(BIN)/*.exe
 
 run:
-	$(BIN)/$(EXE_NAME)
+	$(BIN)/$(TARGET).exe
