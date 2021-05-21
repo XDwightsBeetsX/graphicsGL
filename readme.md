@@ -8,9 +8,9 @@ I have never used this before so just looking to get something to work...
 
 ## Usage
 
-Project can be built using `make all` and run under `\bin` with `make run`  
+Project can be built using `make all` and run with `make run`
 
-Issues can sometimes be solve by rebuilding with `make clean` then `make all`  
+Issues can sometimes be solve by rebuilding with `make wipe` then `make all`
 
 ### Dependencies
 

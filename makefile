@@ -9,13 +9,12 @@ SRC = src
 
 # Linking to static library files
 INCLUDE = H:/dev/graphicsGL/include
-LIB_DIR = H:/dev/graphicsGL/lib/GLFW
 LIB_FLAGS = -lglfw3 -lopengl32 -lgdi32
 
 
 # Compiler
 CXX = g++
-CXXFLAGS = -g -L$(LIB_DIR)
+CXXFLAGS = -g
 OBJ_FLAGS = -g -c -I$(INCLUDE)
 
 

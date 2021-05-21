@@ -1,2 +1,12 @@
 # dev
-.vscode
+*.vscode
+*.git
+
+# executables
+*.exe
+*.out
+
+# OpenGL compilation is system-dependent
+# compiled libraries will not run on other systems
+*.dll
+*.lib
