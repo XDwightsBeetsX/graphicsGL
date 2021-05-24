@@ -1,41 +1,48 @@
 # Makefile for C++ Graphics with OpenGL
 # Author: John Gutierrez
 
+
 # Source Files
+HOME = H:/dev/graphicsGL
 TARGET = program
-BIN = bin
-SRC = src
 
-
-# Linking to static library files
-INCLUDE = H:/dev/graphicsGL/include
-LIB_FLAGS = -lglfw3 -lopengl32 -lgdi32
+BIN = $(HOME)/bin
+SRC = $(HOME)/src
+INCLUDE = $(HOME)/include
+LIB = $(HOME)/lib
 
 
 # Compiler
 CXX = g++
-CXXFLAGS = -g
-OBJ_FLAGS = -g -c -I$(INCLUDE)
+OBJ_FLAGS = -g -c
+
+
+# Linking to static library files
+LIB_FLAGS = -L$(LIB) -lglfw3 -lopengl32 -lgdi32
 
 
 # MAKE
 all: $(TARGET)
 
-$(TARGET): main.o
+$(TARGET): glad.o main.o
 	$(info linking...)
-	$(CXX) $(BIN)/main.o $(CXXFLAGS) $(LIB_FLAGS) -o $(BIN)/$(TARGET)
+	$(CXX) $(BIN)/*.o -g $(LIB_FLAGS) -o $(BIN)/$(TARGET)
+
+glad.o: $(INCLUDE)/GLAD/glad.c
+	$(info compiling glad...)
+	$(CXX) $(INCLUDE)/GLAD/glad.c $(OBJ_FLAGS) -I$(INCLUDE) -o $(BIN)/glad.o
 
 main.o: $(SRC)/main.cpp
-	$(info compiling object files...)
-	$(CXX) $(SRC)/main.cpp $(OBJ_FLAGS) -o $(BIN)/main.o
+	$(info compiling main...)
+	$(CXX) $(SRC)/main.cpp $(OBJ_FLAGS) -I$(INCLUDE) -o $(BIN)/main.o
 
-.PHONY: clean
 clean:
 	rm $(BIN)/*.o
 
-wipe:
-	make clean
-	rm $(BIN)/*.exe
+destroy:
+	rm $(BIN)/*
 
 run:
 	$(BIN)/$(TARGET).exe
+
+.PHONY: all clean destroy run
