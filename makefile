@@ -42,6 +42,10 @@ clean:
 destroy:
 	rm $(BIN)/*
 
+rebuild:
+	make destroy
+	make all
+
 run:
 	$(BIN)/$(TARGET).exe
 
