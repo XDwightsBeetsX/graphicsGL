@@ -34,7 +34,7 @@ int main() {
 
 ## ***[Shaders](shaders.md)***
 
-Shaders are written in the *OpenGL Shading Language (GLSL)* and define how to operate on inputs and outputs in the graphics pipeline.
+Shaders are written in the **OpenGL Shading Language (GLSL)** and define how to operate on inputs and outputs in the graphics pipeline.
 
 There are three types of customizable shaders
 
@@ -48,11 +48,13 @@ In order to apply a shader to make a shape, the shape must be defined by a serie
 
 Note that OpenGL windows are based on *Normalized Device Coordinates (NDC)*.
 
-Vertices should be added to a [Vertex Array Object (VAO)](vao.md) first, then bound to a [Vertex Buffer Object (VBO)](vbo.md), before fianlly defining vertex attributes.
+Vertices should be added to a **[Vertex Array Object (VAO)](vao.md)** first, then bound to a **[Vertex Buffer Object (VBO)](vbo.md)**, before fianlly defining **Vertex Attributes**.
 
-## ***Textures***
+## ***[Textures](textures.md)***
 
-<!-- TODO -->
+Just like shaders must be generated and bound for a **[Vertex Array Object (VAO)](vao.md)**, Textures also need to be tied to a texture object via a series of points.
+
+Loading in a texture image can be done with the **[stb_image](https://github.com/nothings/stb/blob/master/stb_image.h)** library.
 
 ## ***Render Loop***
 
