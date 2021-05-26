@@ -81,8 +81,9 @@ This project will use the **[GLFW](https://www.glfw.org/) + [GLAD](https://glad.
 
 7. Verify
 
-    The modified [sample code](https://learnopengl.com/code_viewer.php?code=getting-started/hellowindow2) below was used to verify the setup of **GLFW + GLAD**  
-    > NOTE: It is important to `#import` *`glad.h`* before *`glfw3.h`*
+    The modified [sample code](https://learnopengl.com/code_viewer.php?code=getting-started/hellowindow2) below was used to verify the setup of **GLFW + GLAD**
+
+    *NOTE: It is important to `#import`*`glad.h`*before*`glfw3.h`**
 
       ```C++
       #include <iostream>
