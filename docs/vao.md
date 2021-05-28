@@ -1,8 +1,8 @@
 # ***Vertex Array Objects (VAOs)***
 
-[*Vertex Buffer Objects (VBOs)*](vbo.md) are used for rendering sets of vertices which might make up some shapes. It is convenient to group *VBOs* together into an array for something like rendering a composite shape.
+[*Vertex Buffer Objects (VBOs)*](vbo.md) are used for rendering sets of vertices which might make up some shapes. It is convenient to group *VBOs* together into an array in a *Vertex Array Object* for something like rendering a composite shape.
 
-*VAOs* contain information about *VBO* objects and can be easily used by binding to the corresponding *VBO* before drawing the object.
+*VAOs* contain information about *VBOs* and can be easily used by binding to the corresponding *VBO* before drawing the object.
 
 ```C++
 // Init VAO

@@ -289,48 +289,50 @@ This project will use the **[GLFW](https://www.glfw.org/) + [GLAD](https://glad.
 
     **Result**
 
-    ![image](https://user-images.githubusercontent.com/55027279/119699326-a82d5300-be17-11eb-9eff-f6aaad91cc2c.png)
+    ![triangle](https://user-images.githubusercontent.com/55027279/119699326-a82d5300-be17-11eb-9eff-f6aaad91cc2c.png)
 
 ## ***Examples***
 
 - [Basic Triangle](#Basic-Triangle)
-- [Color-Shifting Triangle](#Color-Shifting-Triangle)
-- [Custom Shader Triangle](#Custom-Shader-Triangle)
+- [Color-Changing Triangle](#Color-Changing-Triangle)
 - [Custom Texture Shader](#Custom-Texture-Shader)
 
 ### **Basic Triangle**
 
-```shell
-make triangle
-./bin/triangle.exe
-```
+- Code
 
-![image](https://user-images.githubusercontent.com/55027279/119914796-ab633480-bf26-11eb-8261-3f26d352093f.png)
+    ```shell
+    make tri
+    make run-tri
+    ```
 
-### **Color-Shifting Triangle**
+- Result
 
-```shell
-make color-changer
-./bin/color-changer.exe
-```
+    ![triangle](https://user-images.githubusercontent.com/55027279/119699326-a82d5300-be17-11eb-9eff-f6aaad91cc2c.png)
 
-![color-changer](https://user-images.githubusercontent.com/55027279/119915384-03e70180-bf28-11eb-801e-f33014b2cacd.gif)
+### **Color-Changing Triangle**
 
-### **Custom Shader Triangle**
+- Code
 
-```shell
-make triangle-shaders
-./bin/triangle-shaders.exe
-```
+    ```shell
+    make cctri
+    make run-cctri
+    ```
 
-![image](https://user-images.githubusercontent.com/55027279/119915501-4577ac80-bf28-11eb-9caa-70999a5d4f0e.png)
+- Result
+
+    ![color-changer](https://user-images.githubusercontent.com/55027279/119915384-03e70180-bf28-11eb-801e-f33014b2cacd.gif)
 
 ### **Custom Texture Shader**
 
-```shell
+- Code
 
-```
+    ```shell
 
-![image]()
+    ```
+
+- Result
+
+    ![texture]()
 
 *credit to [learnopengl.com](https://learnopengl.com)*

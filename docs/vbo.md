@@ -27,7 +27,6 @@ With arguments:
 2. size of data being bound in bytes
 3. data to be bound
 4. how to manage the sent data
-
     - *GL_STREAM_DRAW* - the data is set only once and used by the GPU at most a few times
     - *GL_STATIC_DRAW* - the data is set only once and used many times
     - *GL_DYNAMIC_DRAW* - the data is changed a lot and used many times

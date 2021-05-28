@@ -36,48 +36,43 @@ main:
 
 
 # Examples
-triangle: glad t_cpp
+tri: glad tri_cpp
 	$(info linking triangle...)
-	$(CXX) $(BIN)/glad.o $(BIN)/triangle.o -g $(LIB_FLAGS) -o $(BIN)/triangle.exe
-t_cpp:
+	$(CXX) $(BIN)/glad.o $(BIN)/basic_triangle.o -g $(LIB_FLAGS) -o $(BIN)/tri.exe
+tri_cpp:
 	$(info compiling triangle...)
-	$(CXX) $(SRC)/triangle.cpp $(OBJ_FLAGS) -I$(INCLUDE) -o $(BIN)/triangle.o
+	$(CXX) $(SRC)/basic_triangle.cpp $(OBJ_FLAGS) -I$(INCLUDE) -o $(BIN)/basic_triangle.o
+run-tri:
+	$(BIN)/tri.exe
 
+cctri: glad cctri_cpp
+	$(info linking color_change_triangle...)
+	$(CXX) $(BIN)/glad.o $(BIN)/color_change_triangle.o -g $(LIB_FLAGS) -o $(BIN)/cctri.exe
+cctri_cpp:
+	$(info compiling color_change_triangle...)
+	$(CXX) $(SRC)/color_change_triangle.cpp $(OBJ_FLAGS) -I$(INCLUDE) -o $(BIN)/color_change_triangle.o
+run-cctri:
+	$(BIN)/cctri.exe
 
-color-changer: glad cch_cpp
-	$(info linking color-changer...)
-	$(CXX) $(BIN)/glad.o $(BIN)/color-changer.o -g $(LIB_FLAGS) -o $(BIN)/color-changer.exe
-cch_cpp:
-	$(info compiling color-changer...)
-	$(CXX) $(SRC)/color-changer.cpp $(OBJ_FLAGS) -I$(INCLUDE) -o $(BIN)/color-changer.o
-
-
-triangle-shaders: glad ts_cpp
-	$(info linking triangle-shaders...)
-	$(CXX) $(BIN)/glad.o $(BIN)/triangle-shaders.o -g $(LIB_FLAGS) -o $(BIN)/triangle-shaders.exe
-ts_cpp: # Note change in include dir to -I$(HOME)
-	$(info compiling triangle-shaders...)
-	$(CXX) $(SRC)/triangle-shaders.cpp $(OBJ_FLAGS) -I$(HOME) -o $(BIN)/triangle-shaders.o
-
-
-wood-container: glad wc_cpp
-	$(info linking wood-container...)
-	$(CXX) $(BIN)/glad.o $(BIN)/wood-container.o -g $(LIB_FLAGS) -o $(BIN)/wood-container.exe
-wc_cpp:
-	$(info compiling wood-container...)
-	$(CXX) $(SRC)/wood-container.cpp $(OBJ_FLAGS) -I$(INCLUDE) -o $(BIN)/wood-container.o
-
+wb: glad stbi wb_cpp
+	$(info linking wood_box...)
+	$(CXX) $(BIN)/glad.o $(BIN)/wood_box.o -g $(LIB_FLAGS) -o $(BIN)/wb.exe
+wb_cpp:
+	$(info compiling wood_box...)
+	$(CXX) $(SRC)/wood_box.cpp $(OBJ_FLAGS) -I$(INCLUDE) -o $(BIN)/wood_box.o
+run-wb:
+	$(BIN)/wb.exe
 
 # GLAD, required for GL calls
-glad: $(INCLUDE)/GLAD/glad.h
+glad:
 	$(info compiling glad...)
-	$(CXX) $(INCLUDE)/GLAD/glad.c $(OBJ_FLAGS) -o $(BIN)/glad.o
+	$(CXX) $(INCLUDE)/GLAD/glad.c $(OBJ_FLAGS) -I$(INCLUDE) -o $(BIN)/glad.o
 
 
 # STBI image loading library (for textures)
-stbi_image: $(INCLUDE)/STB/stb_image.h
-	$(info compiling stbi_image...)
-	$(CXX) $(INCLUDE)/STB/stb_image.cpp $(OBJ_FLAGS) -o $(BIN)/stb_image.o
+stb:
+	$(info compiling stb...)
+	$(CXX) $(INCLUDE)/STB/stb_image.cpp $(OBJ_FLAGS) -I$(INCLUDE) -o $(BIN)/stb.o
 
 
 # MAKE commands...

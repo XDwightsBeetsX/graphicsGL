@@ -8,7 +8,18 @@ where blue stages are those where the user can implement custom shaders.
 
 With the exception of the *Vertex Shader* (which gets its input directly from vertex data), inputs and outputs to the shader methods must be declared.
 
-This, and the implementation of the methods is done in the *OpenGL Shading Language (GLSL)*.
+This, and the implementation of the methods is done in the *OpenGL Shading Language (GLSL)*. *GLSL* code can be written in a simple `const char *codeString` inside the `.cpp` file, or as a seperate shader file. These seperate files do not have an extension since shaders are compiled at run-time with:
+
+```C++
+vertexShader = glCreateShader(GL_VERTEX_SHADER);
+glCompileShader(vertexShader);
+```
+
+Despite this, files can be identified by the following generally accepted extensions:
+
+- *.vs*, *.vert*
+- *.gs*, *.geom*
+- *.fs*, *.frag*
 
 ## ***GLSL***
 
