@@ -16,6 +16,8 @@ This project will use the **[GLFW](https://www.glfw.org/) + [GLAD](https://glad.
 2. **MinGW g++**
 3. **cmake** for install
 
+#### ***[See Examples](#Examples)***
+
 ## [Overview of OpenGL](docs/use.md)
 
 - **OpenGL** is an API for giving instructions to a graphics card
@@ -288,3 +290,47 @@ This project will use the **[GLFW](https://www.glfw.org/) + [GLAD](https://glad.
     **Result**
 
     ![image](https://user-images.githubusercontent.com/55027279/119699326-a82d5300-be17-11eb-9eff-f6aaad91cc2c.png)
+
+## ***Examples***
+
+- [Basic Triangle](#Basic-Triangle)
+- [Color-Shifting Triangle](#Color-Shifting-Triangle)
+- [Custom Shader Triangle](#Custom-Shader-Triangle)
+- [Custom Texture Shader](#Custom-Texture-Shader)
+
+### **Basic Triangle**
+
+```shell
+make triangle
+./bin/triangle.exe
+```
+
+![image](https://user-images.githubusercontent.com/55027279/119914796-ab633480-bf26-11eb-8261-3f26d352093f.png)
+
+### **Color-Shifting Triangle**
+
+```shell
+make color-changer
+./bin/color-changer.exe
+```
+
+![color-changer](https://user-images.githubusercontent.com/55027279/119915384-03e70180-bf28-11eb-801e-f33014b2cacd.gif)
+
+### **Custom Shader Triangle**
+
+```shell
+make triangle-shaders
+./bin/triangle-shaders.exe
+```
+
+![image](https://user-images.githubusercontent.com/55027279/119915501-4577ac80-bf28-11eb-9caa-70999a5d4f0e.png)
+
+### **Custom Texture Shader**
+
+```shell
+
+```
+
+![image]()
+
+*credit to [learnopengl.com](https://learnopengl.com)*
